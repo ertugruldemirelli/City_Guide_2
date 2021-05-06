@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+</head>
+<body>
+    <style>
+        #map { height: 650px;
+                 width: 100%;   
+         }
+    </style>
+    <div id="map">
+
+    </div>
+    <script>
+        var mymap = L.map('map').setView([38.783533313818694, 30.540479228466825], 10);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+	    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(mymap);
+
+/*var marker = L.marker([51.5, -0.09], {
+    color: 'red',
+    fillColor: '#f03'
+}).addTo(mymap);
+var circle = L.circle([51.508, -0.11], {
+    color: 'red',
+    fillColor: '#f03',
+    fillOpacity: 0.5,
+    radius: 500
+}).addTo(mymap);
+var polygon = L.polygon([
+    [51.509, -0.08],
+    [51.503, -0.06],
+    [51.51, -0.047]
+]).addTo(mymap);
+marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+circle.bindPopup("I am a circle.");
+polygon.bindPopup("I am a polygon.");
+
+var popup = L.popup();
+
+function onMapClick(e) {
+    popup
+        .setLatLng(e.latlng)
+        .setContent("You clicked the map at " + e.latlng.toString())
+        .openOn(mymap);
+}
+
+mymap.on('click', onMapClick);*/
+
+
+	var cities = L.layerGroup();
+
+	L.marker([38.75513384603182, 30.529732926265655]).bindPopup('<h1>Ulu Camii</h1><p> Cami, dikdörtgene yakın yamuk planlı olup, 1272-77 yıllarında Sahipata Nusratüddin Hasan tarafından yaptırılmıştır. Dış duvarlar, kesme taş sıralıdır. Araları moloz taş ile örülmüştür. Üst örtü daha önce toprak damlı iken, son yıllarda yapılan onarımla yüksek pramidal çatı ile örtülerek üzeri çinko ile kaplanmıştır. Cami, beş sırada sekizerden kırk ahşap sütun üzerine oturtulmuştur. Ahşap sütunlar üzerine konan sütun başlıkları, çakma sarkıt ve baklava dilimlidir. Doğuya, batıya ve kuzeye açılan üç kapısı vardır. Doğuya bakan kapının üzerinde bir onarım yazıtı bulunur. Buna göre, Cami, Muzafferuddin Devle Bey’in oğlu Muinüddin İsa Bey tarafından H.742 (M.1341) yılında tamir ettirilmiştir. Ayrıca kuzeye açılan kapı üzerinde, Türkçe bir yazıt bulunur. Mihrap mermer olup, üç sıra kuşakla “Ayet-el Kürsi” yazılıdır. Selçuklu tarzı ahşap oymalı iki kanatlı minber kapısı ise Neccar Emir Hac Bey”in eseridir. Ahşap kirişler üzeri renkli kök boyayla geometrik ve bitkisel motifler işlenmiştir.</p>').addTo(cities),
+	L.marker([38.75407131558644, 30.54043326859435]).bindPopup('<h1>Gedik Ahmet Paşa İmaret Camii</h1><p>Afyonkarahisar Merkezinde bulunan cami, hamam ve medrese ile beraber bir külliye oluşturur. Fatih Sultan Mehmet’in vezirlerinden Gedik Ahmet Paşa tarafından Anadolu Beylerbeyliği döneminde (M. 1472) Mimar Ayaz Ağa’ya yaptırılmıştır. Halk arasında “İmaret Camii” adıyla anılır. Orta kısımdan kemerle bölünmüş, art arda iki büyük kubbe ile örtülüdür. İki yanda sıralanan ve dışarı açılan odaları ise, üçer küçük kubbe örter. Kuzeydeki son cemaat yeri, altı yuvarlak sütunlu ve beş sivri kemerli kubbe ile örtülüdür. Doğu, batı ve kuzey duvarlarında iki, kıble duvarında üç sıra pencere vardır. Cami’nin duvarları içten kalem işi yazı ve geometrik desenlerle, üst pencereler ise renkli camlarla süslüdür. Nakışları Abdüssamed oğlu Hasan yapmıştır. Tek şerefeli minaresi, yivli burma biçimlerle süslü olup, yivlerin arası lacivert renkli sırlı tuğlalarla kaplıdır. 1940 yıllarında Vakıflar İdaresi’nce restore edilmiş, camide bulunan hatlar ise, eski özelliğini bozmadan İsmail Hakkı Altınbezer tarafından yazılmış, Avni usta tarafından uygulanmıştır.</p>').addTo(cities),
+	L.marker([38.75367231613237, 30.53360028393696]).bindPopup('<h1>Mevlevi (Türbe) Camii</h1><p>Afyonkarahisar merkez Mevlana Mahallesi’ndedir. Halk arasında “Türbe” veya “Mevlevi Camii” isimleriyle de anılır. Caminin ana bölümleri; türbe, semahane, mescid, şerbethane, bacılar mahfili ve son cemaat yerinden oluşur. Ayrıca, derviş hücreleri, matbah-ı şerif, selamlık dairesi, mezarlık ve harem daireleri bulunmakta ise de, bugün selamlık, mezarlık ve harem daireleri mevcut değildir. Binanın kesme taştan yapılmış kapısı üzerinde, kitabe yerine kabartma bir Mevlevi külahı yer alır. Tek şerefeli minaresi bulunmaktadır. Büyük yangın sonucu yanan Mevlevihane, 1905’de II. Abdülhamit’in emriyle on dört bin altın harcanarak büyük bir onarım görmüştür. Kuzeye bakan cümle kapısından merdivenlerle çıkıldıktan sonra dedelerin hücreleriyle çevrili, ortasında şadırvan bulunan büyük bir avluya girilir. Eskiden Mevlevihane’nin doğusunda bulunan şeyh evi yangından sonra yıkılmıştır. Kapının sağındaki mutfağın bir bölümünde çilehane yer alır. Kasnağındaki renkli camlı pencereleriyle büyük kubbe, örtü sistemini oluşturur. Semahanenin doğusundaki şerbethanenin üst katında semahaneye bakan, kafeslerle çevrili kadınlar mahfili vardır. Semahanenin sol tarafı türbe bölümüdür.</p>').addTo(cities);
+    
+    var places = L.layerGroup();
+
+	L.marker([38.7478867348327, 30.550554510922662]).bindPopup('<h1>Afyonkarahisar (Arkeoloji) Müzesi</h1><p>Cumhuriyet’in ilk yıllarında Afyonkarahisar’da kurulan Âsar-ı Atika Muhipleri Cemiyeti’nin çabalarıyla Taş Medrese’de eski eserler toplanmaya başlanmış, 1931 yılında resmi “Müze Deposu”, 1933 yılında ise Müze Müdürlüğü haline getirilmiştir. Afyonrahasiar’da müzeciliğin gelişmesinde Süleyman Hilmi Gönçer ve Oğuz Güner’in çok büyük katkıları olmuştur. 1933 yılından 1970 yılına kadar Taş Medrese’de karma müze (Arkeoloji ve Etnoğrafya) olarak hizmet veren kurum, 1971 yılında Konya yolu kavşağında, Arkeoloji Müzesi binasının yapılması ile yeni binaya taşınarak hizmet vermeye başlamıştır.</p><p>Müzede, Taş ve Maden (kalkolitik) çağından Bizans çağına kadar Afyonkarahisar ve çevresinde bulunmuş olan arkeolojik eserler, kronolojik bir sıra esas alınarak sergilenmektedir.</p>').addTo(places),
+	L.marker([38.75814385117436, 30.53843781890381]).bindPopup('<h1>Zafer Müzesi</h1><p>Afyonkarahisar şehrinin merkezinde bulunan Anıtpark’ın karşısında yer almaktadır. Müze binası, 1913-1914 yıllarında Belediye Başkanı Esbabzade Hüseyin Tevfik Efendi tarafından Belediye Hizmet Binası olarak yapılmıştır. İki katlı olan bina, kâgir olarak Ermeni ustalara yaptırılmıştır. </p>').addTo(places),
+	L.marker([38.75391161693471, 30.533628099279586]).bindPopup('<h1>Sultan Dîvânî Mevlevîhânesi</h1><p>Anadolu’da kurulan ilk mevlevîhânelerdendir. İlk kuruluşu 13. yüzyıla kadar dayanır. Tarih boyunca birçok önemli icraata merkez olmuş Afyonkarahisar Mevlevîhânesi, Konya Mevlevîhânesinden sonra en önemli Mevlevîhânedir. Özellikle 16. yüzyılda Hz. Mevlânâ’nın yedinci kuşak torunlarından Sultan Dîvânî zamanında Mevlevîlik açısından çok önemli bir merkez olmuştur.Ayrıca başka Mevlevîhânelerde olmayan “40 Hatimli Şifalı Aşure”geleneği ilk defa burada başlamış ve birçok mevlevîhâneye buradan yayılmıştır.</p><p>Birkaç defa yangın geçirmiş olan Afyonkarahisar Mevlevîhânesi,1902’deki büyük yangından sonra tamamen yanmış ve bugünkü haline 1908’de kavuşmuştur</p><p>Bahçesinde Derviş Odaları, Matbah, Hamuşan (Mezarlık) bulunan mevlevîhâne, son olarak 2008 yılında restore edilmiş ve 30 Aralık 2008 tarihinde “Sultan Dîvânî Mevlevîhâne Müzesi” olarak hizmete sunulan tarihî mekan, Afyonkarahisar Belediyesi bünyesinde hizmet vermektedir.</p>').addTo(places);
+
+
+
+	var mbAttr = 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		mbUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw';
+    var MBAttr = 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' + '<a href="http://viewfinderpanoramas.org">SRTM</a>',
+        MBUrl = 'https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png';
+	var grayscale   = L.tileLayer(MBUrl, {tileSize: 512, zoomOffset: -1, attribution: MBAttr}),
+		streets  = L.tileLayer(mbUrl, {id: 'mapbox/streets-v11', tileSize: 512, zoomOffset: -1, attribution: mbAttr});
+
+	
+
+	var baseLayers = {
+		"Topology": grayscale,
+		"Streets": streets,
+	};
+
+	var overlays = {
+		"Camiler": cities,
+        "Müzeler": places,
+	};
+
+	L.control.layers(baseLayers, overlays).addTo(mymap);
+
+
+    </script>
+</body>
+</html>
